@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body style="text-align:center;">
+    <div>
+    <h1 style="color:#609ED4" id="test1">
+        Encriptador Alura
+    </h1>
+    </div>
+    <div>
+    <input type ="texto" id="mensaje" placeholder="Escribe un texto para procesar" style="text-transform: lowercase">
+        <div class="btns-bajos">
+        <input type="button" class="btn" id="btn-ecnriptar" type="button" value="Encriptar" onclick="encriptar()">
+        <input type="button" class="btn" id="btn-desencriptar" value="Desencriptar" onclick="desencriptar()">
+        </div>
+    </div>
+    <div>
+    <input class="btn" type="button" id="btn-copiar" value="Copiar" onclick="copiarTexto()">
+    <p id = "textodespues"></p>
+  
+    </div>
+     
+    <script>
+
+    //El comentario de abajo era una funcion que habia creado para convertir en array el string y de esa manera cambiar el contenido
+    /* function arrayFunction (){
+        msj = document.getElementById("mensaje").value;
+        arr = msj.split("");
+        c = arr.length;
+        console.log(c);
+    } */
+    
+    function encriptar(){
+        var  msj = document.getElementById("mensaje").value;
+
+        var msjc = msj.replace(/a/g, 'ai').replace(/e/g,"enter").replace(/i/g,"imes").replace(/o/g,"ober").replace(/u/g,"ufat");
+      
+      
+      //el codigo en el comentario la primera version que intente hacer complicando ams de lo encesario el problema aun que funciona.
+
+        /*  arrayFunction ();
+       
+        for (let i = 0; i < c; i++) {
+            if (arr[i] == "a"){
+                arr [i] = "ai"; 
+                
+            } 
+            if(arr[i] == "e"){ 
+                arr [i] = "enter";   
+            }
+            if(arr[i] == "i"){ 
+                arr [i] = "imes";   
+            }
+            if(arr[i] == "o"){ 
+                arr [i] = "ober";   
+            }
+            if(arr[i] == "u"){ 
+                arr [i] = "ufat";   
+            } */
+
+        
+/*         }
+    console.log(arr.join('')); */
+
+    console.log(msjc);
+
+    document.getElementById("textodespues").innerHTML = msjc;
+
+    }
+
+    function desencriptar(){
+    
+       var  msj = document.getElementById("mensaje").value;
+
+       //aqui estaba teniendo varios bugs, hasta que descubri que se estaba cambiando solo la primera letra, encontre /g para definir como busqueda global
+
+       var msjdc = msj.replace(/enter/g,"e").replace(/imes/g,"i").replace(/ai/g,'a').replace(/ober/g,"o").replace(/ufat/g,"u");
+            
+       console.log(msjdc);
+       document.getElementById("textodespues").innerHTML = msjdc;
+    }
+
+/*     function copiarTexto(){
+
+        var textocopiado = document.getElementById("textodespues");
+
+        textocopiado.select();
+
+        navigator.clipboard.writeText(textocopiado.value);
+
+
+    } */
+    
+    function copiarTexto(){
+    const textocopiado = document.getElementById('textodespues').textContent;
+    navigator.clipboard.writeText(textocopiado);
+    }
+         
+
+    </script>
+</body>
+</html>

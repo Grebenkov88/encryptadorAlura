@@ -1,0 +1,65 @@
+h1 {
+    position: absolute;
+    left: 5%;
+    right: 60%;
+    top: 0%;
+    bottom: 0%;
+}
+
+#mensaje {
+    position: absolute;
+    width: 577px;
+    height: 48px;
+    left: 10%;
+    top: 168px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+
+}
+.btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 32px;
+    position:absolute;
+    bottom: 10px;
+    left: 10%;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    background: #0A3871;
+    flex: none;
+    order: 0;
+    flex-grow: 0;border-radius: 24px;
+
+    }
+#btn-desencriptar {
+
+    left: 30%;
+}
+
+
+
+#textodespues {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 32px;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 70%;
+    top: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+#btn-copiar{
+    left:75%;
+}
+
